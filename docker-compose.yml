@@ -19,6 +19,7 @@ services:
         networks:
             - url_shortener
         entrypoint: ["/var/www/.docker/php-fpm/entrypoint.sh"]
+        command: ["/bin/sh", "-c", "chmod +x /usr/local/bin/entrypoint.sh && /usr/local/bin/entrypoint.sh"]
         env_file:
             -   .env
 
